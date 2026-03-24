@@ -1,34 +1,47 @@
-# Server Performance Monitoring Script
+# Server Performance Monitoring Tool
 
 ## 📌 Overview
 
-This project is a **Python-based server monitoring script** that analyzes and reports system performance metrics in real time.
+This project is a **Server Performance Monitoring Tool** designed to analyze and display key system performance metrics on a Linux server.
 
-It is designed to quickly check the health of a Linux server.
+It includes two implementations:
 
----
+* 🐍 **Python Script**
+* 🐚 **Bash Script**
 
-## 🚀 Features
-
-The script provides the following system information:
-
-* ✅ CPU Usage
-* ✅ Memory Usage
-* ✅ Disk Usage
-* ✅ Top 5 Processes (CPU & Memory)
-* ✅ Load Average (1, 5, 15 minutes)
-* ✅ Failed Login Attempts
-* ✅ System Uptime
-* ✅ Operating System Info
-* ✅ Logged-in Users
+Both scripts provide a quick and efficient way to monitor system health.
 
 ---
 
-## 🛠️ Technologies Used
+## 🚀 Installation
 
-* Python 3
-* Linux system commands (`top`, `free`, `df`, `ps`, `uptime`, `who`)
-* Bash utilities via Python (`subprocess` module)
+Clone the repository using SSH:
+
+```
+git clone git@github.com:tsepang-beep/Server-Monitor.git
+```
+
+Navigate into the project directory:
+
+```
+cd Server-Monitor
+```
+
+---
+
+## ⚙️ Features
+
+The scripts monitor:
+
+* CPU Usage
+* Memory Usage
+* Disk Usage
+* Top Processes (CPU & Memory)
+* Load Average (1, 5, 15 minutes)
+* Failed Login Attempts
+* System Uptime
+* Operating System Information
+* Logged-in Users
 
 ---
 
@@ -36,46 +49,42 @@ The script provides the following system information:
 
 ```
 Server-Monitor/
-│── server_stats.py
-│── README.md
+├── server_stats.py   # Python version
+├── server_stats.sh   # Bash version
+└── README.md
 ```
 
 ---
 
-## ⚙️ Installation & Setup
+## 🐍 Python Script Usage
 
-1. Clone the repository:
-
-```
-git clone git@github.com:tsepang-beep/Server-Monitor.git
-```
-
-2. Navigate into the directory:
-
-```
-cd Server-Monitor
-```
-
-3. Make the script executable:
-
-```
-chmod +x server_stats.py
-```
-
----
-
-## ▶️ Usage
-
-Run the script using:
-
-```
-./server_stats.py
-```
-
-OR
+Run the Python script:
 
 ```
 python3 server_stats.py
+```
+
+Or make it executable:
+
+```
+chmod +x server_stats.py
+./server_stats.py
+```
+
+---
+
+## 🐚 Bash Script Usage
+
+Make the script executable:
+
+```
+chmod +x server_stats.sh
+```
+
+Run the script:
+
+```
+./server_stats.sh
 ```
 
 ---
@@ -84,52 +93,62 @@ python3 server_stats.py
 
 ```
 ========================================
-        SERVER PERFORMANCE REPORT
+SERVER PERFORMANCE REPORT
 ========================================
 
 CPU Usage:
-Used: 23.45%
+Used: 23%
 
 Memory Usage:
-Used: 1024MB (50.00%)
-Free: 1024MB (50.00%)
+Used: 1024MB (50%)
+Free: 1024MB (50%)
 
 Disk Usage:
 Used: 10G (40%)
 Free: 15G
-
-...
 ```
 
 ---
 
 ## 🔐 Security Feature
 
-The script checks for:
+The scripts check for failed SSH login attempts using:
 
-* Failed SSH login attempts
-* Uses system log files:
+* /var/log/secure (RHEL/CentOS)
+* /var/log/auth.log (Debian/Ubuntu)
 
-  * `/var/log/secure` (RHEL/CentOS)
-  * `/var/log/auth.log` (Ubuntu/Debian)
+This helps detect unauthorized access attempts.
 
 ---
 
+## 🎯 Learning Objectives
+
+This project demonstrates:
+
+* Linux system monitoring
+* Automation using Python
+* Bash scripting
+* Use of system commands
+* Git and GitHub workflow
+
+---
+
+## 🚀 Future Improvements
+
+* Add colored output
+* Save reports to a file
+* Automate execution using cron jobs
+* Add alert notifications
+
+---
 
 ## 👨‍💻 Author
 
-**Tsepang Seturumane**
+Tsepang Seturumane
 
 ---
 
-## 📌 Future Improvements
+## 📁 Repository
 
-* Add colored output
-* Export report to file
-* Email alerts
-* Use Python libraries like `psutil`
-
----
-
-
+Server-Monitor
 
